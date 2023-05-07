@@ -2,8 +2,8 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "yabai",
   "title": "Yabai",
-  "description": "",
-  "icon": "command-icon.png",
+  "description": "Control Yabai using Raycast",
+  "icon": "yabai-icon-512px.png",
   "author": "krzysztoff1",
   "categories": [
     "Developer Tools"
@@ -11,10 +11,36 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "index",
-      "title": "Yabai",
-      "description": "Template with a plain detail view",
-      "mode": "view"
+      "name": "start",
+      "title": "Start Yabai",
+      "description": "Start Yabai using brew - `brew services start yabai`",
+      "mode": "no-view"
+    },
+    {
+      "name": "stop",
+      "title": "Stop Yabai",
+      "description": "Stop Yabai using brew - `brew services stop yabai`",
+      "mode": "no-view"
+    },
+    {
+      "name": "rotate",
+      "title": "Rotate",
+      "description": "Rotate the tree",
+      "mode": "no-view"
+    },
+    {
+      "name": "mirror",
+      "title": "Mirror",
+      "description": "Mirror the tree",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "axis",
+          "placeholder": "x",
+          "type": "text",
+          "required": false
+        }
+      ]
     }
   ],
   "dependencies": {
