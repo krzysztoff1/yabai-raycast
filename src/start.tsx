@@ -20,6 +20,12 @@ const restart = async () => {
 };
 
 export default async () => {
+  showToast({
+    style: Toast.Style.Animated,
+    title: "Yabai",
+    message: "Starting Yabai...",
+  });
+
   try {
     const { stdout, stderr } = await start();
 

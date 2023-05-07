@@ -7,6 +7,12 @@ const start = async () => {
 };
 
 export default async () => {
+  showToast({
+    style: Toast.Style.Animated,
+    title: "Yabai",
+    message: "Stopping Yabai...",
+  });
+
   try {
     const { stdout, stderr } = await start();
 
