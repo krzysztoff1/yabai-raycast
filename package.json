@@ -41,6 +41,12 @@
           "required": false
         }
       ]
+    },
+    {
+      "name": "balance",
+      "title": "Balance",
+      "description": "Balance the windows",
+      "mode": "no-view"
     }
   ],
   "dependencies": {
