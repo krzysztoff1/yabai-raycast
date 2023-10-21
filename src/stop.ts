@@ -1,10 +1,5 @@
 import { Toast, showHUD, showToast } from "@raycast/api";
-import { BREW_PATH, runShellScript } from ".";
-
-const start = async () => {
-  const cmd = `${BREW_PATH} services stop yabai`;
-  return await runShellScript(cmd);
-};
+import { runYabaiCommand } from ".";
 
 export default async () => {
   showToast({
@@ -14,7 +9,7 @@ export default async () => {
   });
 
   try {
-    const { stdout, stderr } = await start();
+    const { stdout, stderr } = await runYabaiCommand("--stop-service");
 
     if (stdout.includes("not running")) {
       showToast({

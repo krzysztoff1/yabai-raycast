@@ -9,7 +9,7 @@ const ERROR_MESSAGE = "Failed to mirror space";
 
 export default async (props: LaunchProps<{ arguments: MirrorArguments }>) => {
   const axis = props?.arguments?.axis ? props.arguments.axis : "y";
-  const cmd = `space --mirror ${axis}-axis`;
+  const cmd = `-m space --mirror ${axis}-axis`;
 
   try {
     const { stderr } = await runYabaiCommand(cmd);

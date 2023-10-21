@@ -6,7 +6,7 @@ const SUCCESS_MESSAGE = "Window tree rotated.";
 
 export default async () => {
   try {
-    const { stderr } = await runYabaiCommand("space --rotate 90");
+    const { stderr } = await runYabaiCommand("-m space --rotate 90");
 
     if (stderr) {
       throw new Error();

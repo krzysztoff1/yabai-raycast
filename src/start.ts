@@ -1,21 +1,25 @@
 import { Toast, showHUD, showToast } from "@raycast/api";
-import { BREW_PATH, runShellScript } from ".";
+import { runYabaiCommand } from ".";
 
-const start = async () => {
-  const cmd = `${BREW_PATH} services start yabai`;
-  return await runShellScript(cmd);
+const handleError = (errorMessage: string) => {
+  showToast({
+    style: Toast.Style.Failure,
+    title: "Error, cannot run Yabai command",
+    message: errorMessage.slice(0, 100),
+  });
 };
 
 const restart = async () => {
   try {
-    const cmd = `${BREW_PATH} services restart yabai`;
-    await runShellScript(cmd);
+    const { stderr } = await runYabaiCommand("--restart-service");
+
+    if (stderr) {
+      handleError(stderr);
+
+      return;
+    }
   } catch (error) {
-    showToast({
-      style: Toast.Style.Failure,
-      title: "Error",
-      message: "An error occurred while restarting Yabai.",
-    });
+    handleError(String(error));
   }
 };
 
@@ -27,7 +31,7 @@ export default async () => {
   });
 
   try {
-    const { stdout, stderr } = await start();
+    const { stdout, stderr } = await runYabaiCommand("--start-service");
 
     if (stdout.includes("already started")) {
       showToast({
@@ -51,12 +55,7 @@ export default async () => {
     }
 
     if (stderr) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Error",
-        message: stderr,
-      });
-
+      handleError(stderr);
       return;
     }
 

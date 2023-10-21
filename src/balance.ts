@@ -6,7 +6,7 @@ const SUCCESS_MESSAGE = "Balanced space";
 
 export default async () => {
   try {
-    const { stderr } = await runYabaiCommand("space --balance");
+    const { stderr } = await runYabaiCommand("-m space --balance");
 
     if (stderr) {
       throw new Error();
