@@ -1,10 +1,8 @@
-import { Toast, showHUD, showToast } from "@raycast/api";
-import { runYabaiCommand } from ".";
+import { showHUD } from "@raycast/api";
+import { runYabaiCommand } from "./helpers/scripts";
+import { showFailureToast } from "@raycast/utils";
 
-const ERROR_MESSAGE = "Failed to balance space";
-const SUCCESS_MESSAGE = "Balanced space";
-
-export default async () => {
+export default async function Command() {
   try {
     const { stderr } = await runYabaiCommand("-m space --balance");
 
@@ -12,12 +10,10 @@ export default async () => {
       throw new Error();
     }
 
-    showHUD(SUCCESS_MESSAGE);
+    showHUD("Balanced space");
   } catch (error) {
-    showToast({
-      style: Toast.Style.Failure,
-      title: "Error",
-      message: ERROR_MESSAGE,
+    showFailureToast(error, {
+      title: "Failed to balance space, make sure you have Yabai installed and running",
     });
   }
-};
+}

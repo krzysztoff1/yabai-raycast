@@ -1,8 +1,6 @@
-import { Toast, showHUD, showToast } from "@raycast/api";
-import { runYabaiCommand } from ".";
-
-const ERROR_MESSAGE = "Failed to rotate window tree.";
-const SUCCESS_MESSAGE = "Window tree rotated.";
+import { showHUD } from "@raycast/api";
+import { runYabaiCommand } from "./helpers/scripts";
+import { showFailureToast } from "@raycast/utils";
 
 export default async () => {
   try {
@@ -12,12 +10,10 @@ export default async () => {
       throw new Error();
     }
 
-    showHUD(SUCCESS_MESSAGE);
+    showHUD("Rotated window tree");
   } catch (error) {
-    showToast({
-      style: Toast.Style.Failure,
-      title: "Error",
-      message: ERROR_MESSAGE,
+    showFailureToast(error, {
+      title: "Failed to rotate window tree, make sure you have Yabai installed and running",
     });
   }
 };

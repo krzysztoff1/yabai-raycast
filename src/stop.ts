@@ -1,5 +1,5 @@
 import { Toast, showHUD, showToast } from "@raycast/api";
-import { runYabaiCommand } from ".";
+import { runYabaiCommand } from "./helpers/scripts";
 
 export default async () => {
   showToast({

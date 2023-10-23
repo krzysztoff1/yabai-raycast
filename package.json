@@ -29,18 +29,16 @@
       "mode": "no-view"
     },
     {
-      "name": "mirror",
-      "title": "Mirror",
-      "description": "Mirror the tree",
-      "mode": "no-view",
-      "arguments": [
-        {
-          "name": "axis",
-          "placeholder": "x",
-          "type": "text",
-          "required": false
-        }
-      ]
+      "name": "mirror-x",
+      "title": "Mirror X",
+      "description": "Mirror the tree on the X axis",
+      "mode": "no-view"
+    },
+    {
+      "name": "mirror-y",
+      "title": "Mirror Y",
+      "description": "Mirror the tree on the Y axis",
+      "mode": "no-view"
     },
     {
       "name": "balance",
@@ -51,6 +49,7 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.50.4",
+    "@raycast/utils": "^1.10.0",
     "execa": "^7.1.1"
   },
   "devDependencies": {
