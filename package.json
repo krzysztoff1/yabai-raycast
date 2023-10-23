@@ -47,6 +47,18 @@
       "mode": "no-view"
     }
   ],
+  "preferences": [
+    {
+      "name": "yabaiExecutablePath",
+      "description": "Path to the yabai executable",
+      "type": "textfield",
+      "required": false,
+      "default": "./opt/homebrew/bin/yabai",
+      "title": "Path to the yabai executable",
+      "placeholder": "Path to the yabai executable",
+      "label": "By default, the extension will use the yabai executable from the homebrew installation. If you have yabai installed in a different location, you can specify it here."
+    }
+  ],
   "dependencies": {
     "@raycast/api": "^1.50.4",
     "@raycast/utils": "^1.10.0",

@@ -1,8 +1,11 @@
+import { getPreferenceValues } from "@raycast/api";
 import { execaCommand } from "execa";
 import { userInfo } from "os";
 
-const YABAI_PATH = `env USER=${userInfo().username} ./opt/homebrew/bin/yabai`;
+const userEnv = `env USER=${userInfo().username}`;
 
 export const runYabaiCommand = async (command: string) => {
-  return await execaCommand([YABAI_PATH, command].join(" "));
+  const { yabaiExecutablePath } = getPreferenceValues<Preferences>();
+
+  return await execaCommand([userEnv, yabaiExecutablePath, command].join(" "));
 };
