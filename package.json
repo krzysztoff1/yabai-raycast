@@ -6,10 +6,25 @@
   "icon": "yabai-icon-512px.png",
   "author": "krzysztoff1",
   "categories": [
-    "Developer Tools"
+    "Developer Tools",
+    "Productivity"
   ],
   "license": "MIT",
   "commands": [
+    {
+      "name": "custom-yabai-com",
+      "title": "Custom yabai command",
+      "description": "Run custom yabai command",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "command",
+          "placeholder": "Command",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
     {
       "name": "start",
       "title": "Start Yabai",
