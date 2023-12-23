@@ -15,7 +15,7 @@ export default async function Command(launchProps: LaunchProps) {
     }
 
     if (!command) {
-      showFailureToast("No command provided");
+      showFailureToast("No command provided.");
       return;
     }
 

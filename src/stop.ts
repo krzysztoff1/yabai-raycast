@@ -12,6 +12,8 @@ export default async () => {
 
     showHUD("Yabai has been stopped.");
   } catch (error) {
-    showFailureToast("An error occurred while stopping Yabai.");
+    showFailureToast(error, {
+      title: "Failed to stop Yabai.",
+    });
   }
 };

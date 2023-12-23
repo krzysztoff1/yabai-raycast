@@ -13,7 +13,7 @@ export default async () => {
     showHUD("Rotated window tree");
   } catch (error) {
     showFailureToast(error, {
-      title: "Failed to rotate window tree, make sure you have Yabai installed and running",
+      title: "Failed to rotate window tree, make sure you have Yabai installed and running.",
     });
   }
 };

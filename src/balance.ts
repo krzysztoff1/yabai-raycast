@@ -13,7 +13,7 @@ export default async function Command() {
     showHUD("Balanced space");
   } catch (error) {
     showFailureToast(error, {
-      title: "Failed to balance space, make sure you have Yabai installed and running",
+      title: "Failed to balance space, make sure you have Yabai installed and running.",
     });
   }
 }

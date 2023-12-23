@@ -12,6 +12,8 @@ export default async () => {
 
     showHUD("Yabai has been started.");
   } catch (error) {
-    showFailureToast("An error occurred while starting Yabai.");
+    showFailureToast(error, {
+      title: "Failed to start Yabai. Make sure you Yabai is installed.",
+    });
   }
 };

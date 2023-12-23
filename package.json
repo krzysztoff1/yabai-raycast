@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "yabai",
   "title": "Yabai",
-  "description": "Control Yabai using Raycast",
+  "description": "Control Yabai using Raycast. Requires yabai to be installed.",
   "icon": "yabai-icon-512px.png",
   "author": "krzysztoff1",
   "categories": [
@@ -12,9 +12,9 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "custom-yabai-com",
-      "title": "Custom yabai command",
-      "description": "Run custom yabai command",
+      "name": "custom-yabai-command",
+      "title": "Run Custom Yabai Command",
+      "description": "Run custom Yabai command",
       "mode": "no-view",
       "arguments": [
         {
@@ -28,49 +28,49 @@
     {
       "name": "start",
       "title": "Start Yabai",
-      "description": "Start Yabai using brew - `brew services start yabai`",
+      "description": "This command will start Yabai using `yabai --start-service`.",
       "mode": "no-view"
     },
     {
       "name": "stop",
       "title": "Stop Yabai",
-      "description": "Stop Yabai using brew - `brew services stop yabai`",
+      "description": "This command will stop Yabai using `yabai --stop-service`.",
       "mode": "no-view"
     },
     {
       "name": "rotate",
       "title": "Rotate",
-      "description": "Rotate the tree",
+      "description": "Rotate the tree 90 degrees clockwise.",
       "mode": "no-view"
     },
     {
       "name": "mirror-x",
       "title": "Mirror X",
-      "description": "Mirror the tree on the X axis",
+      "description": "Mirror the tree on the X axis.",
       "mode": "no-view"
     },
     {
       "name": "mirror-y",
       "title": "Mirror Y",
-      "description": "Mirror the tree on the Y axis",
+      "description": "Mirror the tree on the Y axis.",
       "mode": "no-view"
     },
     {
       "name": "balance",
       "title": "Balance",
-      "description": "Balance the windows",
+      "description": "Balance the windows.",
       "mode": "no-view"
     }
   ],
   "preferences": [
     {
       "name": "yabaiExecutablePath",
-      "description": "Path to the yabai executable",
+      "description": "Path to the yabai executable.",
       "type": "textfield",
       "required": false,
       "default": "./opt/homebrew/bin/yabai",
       "title": "Path to the yabai executable",
-      "placeholder": "Path to the yabai executable",
+      "placeholder": "./opt/homebrew/bin/yabai",
       "label": "By default, the extension will use the yabai executable from the homebrew installation. If you have yabai installed in a different location, you can specify it here."
     }
   ],

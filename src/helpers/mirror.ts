@@ -15,7 +15,7 @@ export async function mirror(axis: "x" | "y") {
     showHUD(`Mirrored space in the ${axis} axis`);
   } catch (error) {
     showFailureToast(error, {
-      title: "Failed to mirror (x) space, make sure you have Yabai installed and running",
+      title: `Failed to mirror space in the ${axis} axis. Make sure Yabai is installed and running.`,
     });
   }
 }
